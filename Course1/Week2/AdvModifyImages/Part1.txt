@@ -1,0 +1,20 @@
+// write your code here
+var fgImg = new SimpleImage("drewRobert.png");
+var bgImg = new SimpleImage("dinos.png");
+var width =  fgImg.getWidth();
+var height = bgImg.getHeight();
+var outImg = new SimpleImage(width, height);
+
+
+for (var pixel of fgImg.values()) {
+    if (pixel.getGreen() > pixel.getRed() + pixel.getBlue()){
+        x = pixel.getX();
+        y = pixel.getY();
+        outImg.setPixel(x, y, bgImg.getPixel(x, y));
+    }
+    else {
+        outImg.setPixel(pixel.getX(), pixel.getY(), pixel);
+    }
+}
+
+print(outImg);

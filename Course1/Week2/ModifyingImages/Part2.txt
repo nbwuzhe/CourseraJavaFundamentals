@@ -1,0 +1,16 @@
+// write your code here
+var img = new SimpleImage("hilton.jpg");
+var width = img.getWidth();
+
+function swapRedGreen(pixel){
+    var greenOrig = pixel.getGreen();
+    var redOrig = pixel.getRed();
+    pixel.setGreen(redOrig);
+    pixel.setRed(greenOrig);
+}
+
+for (var pixel of img.values()) {
+    swapRedGreen(pixel);
+}
+
+print(img);

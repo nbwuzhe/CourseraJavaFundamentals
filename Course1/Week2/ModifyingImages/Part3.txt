@@ -1,0 +1,17 @@
+// write your code here
+var img = new SimpleImage("duke_blue_devil.png");
+var width = img.getWidth();
+
+function swapBlueYellow(pixel){
+    if (pixel.getBlue() != 255 || pixel.getRed() != 255 || pixel.getGreen() != 255) {
+        pixel.setRed(255); 
+        pixel.setGreen(255);
+        pixel.setBlue(0);
+    }
+}
+
+for (var pixel of img.values()) {
+    swapBlueYellow(pixel);
+}
+
+print(img);
